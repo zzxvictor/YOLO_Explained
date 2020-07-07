@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/darknet19_448.conv.23
+/yolov2_voc.h5
