@@ -239,10 +239,10 @@ def yoloLoss(features, labels, anchors, hyperparam={'local': 5.0, 'obj': 5.0, 'n
 
     # calculate the detection loss
     iou = getIOU(tf.concat([boxXY, boxWH], axis=-1), tf.concat([gtXY, gtWH], axis=-1))
-    bestIOU = tf.math.reduce_max(iou, axis=-1, keepdims=True)
-    nonObj = bestIOU < hyperparam['iouThresh']
-    nonObj = tf.cast(tf.expand_dims(nonObj, axis=-1), mask.dtype) * (1.0 - mask) * nonObjCoef
-    nonObjLoss = nonObj * tf.square(0 - objScore)
+    #bestIOU = tf.math.reduce_max(iou, axis=-1, keepdims=True)
+    #nonObj = bestIOU < hyperparam['iouThresh']
+    #nonObj = tf.cast(tf.expand_dims(nonObj, axis=-1), mask.dtype) * (1.0 - mask) * nonObjCoef
+    nonObjLoss = (1.0 - mask) * nonObjCoef * tf.square(0 - objScore)
     objLoss = mask * tf.square(objScore - tf.expand_dims(iou, axis=-1)) * objCoef
 
     objLoss = tf.math.reduce_sum(nonObjLoss + objLoss, axis=[1, 2, 3, 4])
