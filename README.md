@@ -4,6 +4,7 @@
 Yolo is a fully convolutional model that, unlike many other scanning detection algorithms, generates bounding boxes in one pass. 
 In this tutorial repo, you'll learn how exactly does Yolo work by analyzing a Tensorflow 2
 implementation of the algorithm.
+
 ![Cover](Misc/CoverPage.jpg)
 ## Goals 
 This project has two goals: 
@@ -20,6 +21,7 @@ matplotlib >= 3.1.2
 ## Tutorial Structure 
 #### Jupyter Notebook Tutorials  
 In these tutorials we are going to implement Yolo V2 step by step 
+* **Tutorial 0**: verify the environment and download some necessary weight files
 * **Tutorial 1**: understand the output format of Yolo V2
 * **Tutorial 2**: convert the raw yolo output to a list of bounding boxes (Post Processing)
 * **Tutorial 3**: how to create training labels from annotations such as Json or XML

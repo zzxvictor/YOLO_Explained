@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /darknet19_448.conv.23
 /yolov2_voc.h5
+/yolov2-voc.weights
